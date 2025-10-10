@@ -1,4 +1,6 @@
-import { Link, NavLink } from "react-router";
+
+
+import { Link, } from "react-router";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
@@ -29,16 +31,16 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow  "
             >
-              <NavLink to="/" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+             <li><Link to={"/"}className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                       Home
-            </NavLink>
-            <NavLink to="/allApps" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+            </Link></li>
+            <li><Link to={"/apps"} className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                      Apps
-            </NavLink>
-            <NavLink to="/installation" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+            </Link></li>
+           <li> <Link to={"/installation"} className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                      Installation
-            </NavLink>
-
+            </Link>
+</li>
             </ul>
           </div>
           <Link className="btn btn-ghost text-xl hidden md:flex">
@@ -48,15 +50,16 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-x-4 font-bold text-[17px]  ">
-             <NavLink to="/" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+             <li><Link to={"/"}className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                       Home
-            </NavLink>
-            <NavLink to="/allApps" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+            </Link></li>
+            <li><Link to={"/apps"} className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                      Apps
-            </NavLink>
-            <NavLink to="/installation" className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
+            </Link></li>
+           <li> <Link to={"/installation"} className="text-gray-800 hover:text-purple-600 font-bold transition duration-200">
                      Installation
-            </NavLink>
+            </Link>
+         </li>
 
           </ul>
         </div>
