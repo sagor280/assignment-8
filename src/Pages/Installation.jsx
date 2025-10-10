@@ -111,7 +111,7 @@ const Installation = () => {
                     <div className='pr-4 flex items-center gap-3'>
                       <button
                         onClick={() => handleRemove(p.id)}
-                        className='btn btn-success'
+                        className='btn bg-red-400'
                       >
                         Uninstall
                       </button>

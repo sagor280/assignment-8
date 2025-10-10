@@ -4,6 +4,7 @@ import Apps from './Apps';
 import useApp from '../Hooks/useApp';
 import Card from '../Component/Card';
 import { NavLink } from 'react-router';
+import SkeletonLoder from '../Component/SkeletonLoder';
 
 const Home = () => {
   const { loading, error, apps } = useApp()
@@ -18,14 +19,17 @@ const Home = () => {
         <p className="text-gray-500 mt-1">
           Explore All Trending Apps on the Market developed by us
         </p>
-      </div>
-
-      {/* Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto ">
+        </div>
+         {loading ? (
+        <SkeletonLoder></SkeletonLoder>
+      ) : (
+       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto ">
         {featuredApps.map((app) => (
           <Card key={app.id} app={app} />
         ))}
       </div>
+      )}
+  
 
       {/* Button */}
       <div className="flex justify-center mt-10">

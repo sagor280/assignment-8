@@ -5,7 +5,7 @@ import appErrorImg from '../assets/App-Error.png';
 import { FaDownload, FaStar, FaUserCheck } from 'react-icons/fa';
 import Charts from './Charts';
 import Description from './Description';
-import Swal from 'sweetalert2'
+import { toast } from 'react-toastify';
 import { installApp, isAppInstalled } from '../utiliti/LocalStorage';
 
 const AppDetails = () => {
@@ -101,20 +101,7 @@ const AppDetails = () => {
               onClick={() => {
                 installApp(app);
                 setIsInstalled(true);
-
-
-                   Swal.fire({
-                  toast: true,
-                  position: 'top-end',
-                  icon: 'success',
-                  title: `${app.title} installed successfully!`,
-                  showConfirmButton: false,
-                  timer: 2000,
-                  timerProgressBar: true,
-                });
-
-
-
+                 toast.success('App installed successfully');
               }}
               
               className={`btn ${isInstalled ? 'btn-disabled bg-sky-500 text-white' : 'btn-success'}`}>
